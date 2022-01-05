@@ -1,0 +1,19 @@
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--black);
+    background-color: #FFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #3B434E;
+    --white: white;
+    --primary: rgb(7, 21, 65);
+    --red: red;
+    --green: green;
+    --green-light: rgb(59, 179, 59);
+}
