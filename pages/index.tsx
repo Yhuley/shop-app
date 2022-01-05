@@ -1,5 +1,7 @@
+import { Htag } from "../components"
+
 export default function Home() {
   return (
-    <>helfvddwdwlo</>
+    <Htag tag="h1">hello</Htag>
   )
 }
