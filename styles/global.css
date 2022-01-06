@@ -3,6 +3,8 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--black);
     background-color: #FFF;
+    margin: 0;
+    padding: 0;
 }
 
 * {
