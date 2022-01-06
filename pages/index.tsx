@@ -1,4 +1,4 @@
-import { Htag, Button, Paragraph } from "../components"
+import { Htag, Button, Paragraph, Tag } from "../components"
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Button appearance="primary" arrow="right">click me</Button>
       <Button appearance="ghost" arrow="down">click me</Button>
       <Paragraph size="large">as</Paragraph>
+      <Tag color="green">fdd</Tag>
     </>
   )
 }
