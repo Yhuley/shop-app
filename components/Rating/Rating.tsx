@@ -19,10 +19,16 @@ export const Rating = ({isEditable = false, rating = 0, setRating, ...props}: Ra
         setRating(index)
     }
 
+    const handleSpace = (index: number, event: KeyboardEvent<SVGAElement>) => {
+        if(event.code !== "Space" || !setRating) return
+
+        setRating(index)
+    }
+
     const makeRating = (currentRating: number) => {
         const updatedRating = ratingArray.map((r: JSX.Element, i: number) => {
             return (
-                <Star 
+                <span
                     className={cn(styles.star, {
                         [styles.filled]: i < currentRating,
                         [styles.editable]: isEditable
@@ -30,9 +36,12 @@ export const Rating = ({isEditable = false, rating = 0, setRating, ...props}: Ra
                     onMouseEnter={() => changeDisplay(i + 1)}
                     onMouseLeave={() => changeDisplay(rating)}
                     onClick={() => changeRating(i + 1)}
-                    tabIndex={isEditable ? 0 : -1}
-                    onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)}
-                /> 
+                >
+                    <Star
+                        tabIndex={isEditable ? 0 : -1}
+                        onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)}
+                    /> 
+                </span>
             )
         })
         setRatingArray(updatedRating)
